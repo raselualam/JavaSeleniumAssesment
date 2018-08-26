@@ -9,20 +9,13 @@ public class Solution2 {
 
 		WebDriver driver = new FirefoxDriver();
 
-		// Steps:
-
-		// 1. Navigate to https://www.weightwatchers.com/us/
+		// Step 1. Navigate to https://www.weightwatchers.com/us/
 
 		driver.navigate().to("https://www.weightwatchers.com/us/");
 
 		driver.manage().window().maximize();
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-
-		// 2. Verify loaded page title matches “Weight Loss Program, Recipes
-		// &amp; Help | Weight Watchers”
+		// Step 2. Verify loaded page title matches “Weight Loss Program, Recipes & Help | Weight Watchers”
 
 		String title = driver.getTitle();
 
@@ -39,18 +32,16 @@ public class Solution2 {
 
 		}
 
-		// Assert.assertEquals(title,
-		// "Weight Loss Program, Recipes &amp; Help | Weight Watchers");
 
-		// 3. On the right corner of the page, click on “Find a Meeting”
+		// Step 3. On the right corner of the page, click on “Find a Meeting”
 
-		Thread.sleep(500);
+		Thread.sleep(1000);
 
 		driver.findElement(
 				By.xpath("//*[@id='ela-menu-visitor-desktop-supplementa_find-a-meeting']"))
 				.click();
 
-		// 4. Verify loaded page title contains “Get Schedules & Times Near You”
+		// Step 4. Verify loaded page title contains “Get Schedules & Times Near You”
 
 		String pageTitle = driver.getTitle().substring(16, 46);
 
@@ -66,9 +57,9 @@ public class Solution2 {
 
 		}
 
-		// 5. In the search field, search for meetings for zip code: 10011
+		// Step 5. In the search field, search for meetings for zip code: 10011
 
-		Thread.sleep(500);
+		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//*[@id=\'meetingSearch\']")).sendKeys(
 				"10011");
@@ -77,8 +68,7 @@ public class Solution2 {
 				By.xpath(".//span[@class='input-group-btn']/button[@class='btn btn-default form-blue-pill__btn']"))
 				.click();
 
-		// 6. Print the title of the first result and the distance (located on
-		// the right of location title/name)
+		// Step 6. Print the title of the first result and the distance (located on the right of location title/name)
 
 		String heading_text1 = driver.findElement(
 				By.xpath(".//*[@class='location__name']/span")).getText();
@@ -92,10 +82,7 @@ public class Solution2 {
 
 		System.out.println(heading_text2);
 
-		// 7. Click on the first search result and then, verify displayed
-		// location name matches with the
-
-		// name of the first searched result that was clicked.
+		// Step 7. Click on the first search result and then, verify displayed location name matches with the name of the first searched result that was clicked.
 
 		driver.findElement(By.xpath(".//*[@class='location__name']/span"))
 				.click();
@@ -115,8 +102,7 @@ public class Solution2 {
 
 		}
 
-		// 8. From this location page, print TODAY’s hours of operation (located
-		// towards the bottom of the page)
+		// Step 8. From this location page, print TODAY’s hours of operation (located towards the bottom of the page)
 
 		String currentDayOperation1 = driver
 				.findElement(
