@@ -1,4 +1,4 @@
-# weightWatchersAssesment
+# weightWatchers Java Selenium Assesment
 
 Question 1:
 
