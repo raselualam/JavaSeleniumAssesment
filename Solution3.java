@@ -2,6 +2,8 @@ import java.util.Random;
 
 public class Solution3 { 
 
+	// Generate 500 random numbers and print the nth smallest number in a programming language of your choice. 
+	
 	private static int i, a = 0, small = 500;
 
 	public static void main(String[] args) {
